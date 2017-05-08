@@ -1,0 +1,220 @@
+---
+title: "Length Frequency Relationship of *Sarotherodon melanotheron*"
+author: "Vida S. Osei"
+date: "5/4/2017"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r echo=FALSE, include=FALSE}
+library('psych')
+library(ggplot2)
+library(bbmle)
+library(plyr)
+```
+
+```{r echo=FALSE, include=FALSE}
+setwd("/Users/Sammy/Desktop/Term_paper")
+```
+
+```{r echo=FALSE, include=FALSE}
+data = read.csv('Tilapia Data_Vida1.csv', header = TRUE, sep = ",", quote = "\"",
+                dec = ".", fill = TRUE, comment.char = "")
+data <- na.omit(data)
+```
+# **Abstract**
+*Sarotherodon melanotheron* is a commercially important fish species and constitutes about 59% of fish exploited in brackish water systems in Ghana. Biological data on *S. melanotheron* from the Dominli lagoon was explored to determine size distribution of the population and the body and gonad weight of the species by month. The data waas analysed to establish the relationship between the length and weight using regression. The mode of the length of sizes in male and female were 10.3cm and 10.9cm respectively. The regression analysis showed a negative allometric growth (b= 2.7 ) of *S. melanotheron* populations in the lagoon.
+```{r}
+
+```
+
+```{r}
+
+```
+#**1. Introduction**
+
+Black-chinned tilapia, Sarotherodon melanotheron, belongs to the family Cichlidae in the order Perciformes. It is native to West Africa from Senegal to Zaire and in its native range, it occurs in brackish coastal lagoons and estuaries (Trewavas 1983). This species is plantivorous feeder, consuming mainly algae, detritus and cyanobacteria but also consume small portions of zooplankton (Kone and Teugels 2003, Ayoadze and Ikuala 2007). They have been introduced to other continents like Asia and America. The cichlids (tilapia) are of high commercial and economic importance to African countries (Abban etal, 2004).  It is one of the major commercially important fish species exploited in brackish water systems in Ghana and constitutes about 59% of fish caught in brackish water systems in Ghana (Welcome, 1972, Blay and Asabere, 1993). The blackchin tilapia fishery provides livelihood to fishers and also serves as cheap source of protein to neighboring communities (Arizi etal, 2014). The biology of this species has been widely studied by different authors. Faunce (2000) in his study on the reproductive biology of Sarotherodon melanotheron in impounded mangrove systems in Florida reported the sex ratio of 1:1 for the species. However, in Ghana few studies have research the Sarotherodon melanotheron. Blay (1998) studied the growth and mortality of blackchin tilapia in the Benya lagoon and the Kakum river Estuary in Ghana and reported the length at first sexual maturity to be 5.5cm and 4.6 respectively. Other studies have also look at the genetics (Abban etal, 2000) and the ecology of the species (Ofori Danson and Kumi, 2006). Information on relationship between length and weight and other biological parameters of this species of fish in Dominli lagoon is not well studied. Good management of Sarotherodon melanotheron necessitates adequate information on its abundance, biology and general population structure.  According to King (2007), length-weight relationship and condition factor are important tools for providing basic scientific information to inform management decisions for fish species. According to King (2007), the growth of the fish is said to follow the cube law (Froese, 2006) which is W=aLb, where W is the weight of fish, L is its length, a and b are constants. The growth pattern of fish in a normal population is said to be isometric, when length increases in equal proportions with body weight for constant specific gravity. When b = 3, the fish is said to grow isometrically indicating a good growth pattern of the fish. On the contrary, when the rate of increase in weight is greater than the rate of increase in length (b > 3), the growth is said to be positive allometric. It is negative allometric when the rate of increase in length is greater than the rate of increase in weight (b<3).                  Hence, I will estimate the length-weight relationship of Sarotherodon melanotheron Dominli lagoon in Ghana to understand the well-being of the species.  
+
+```{r}
+
+```
+
+# **2. Methodology**
+##2.1. Study Site
+
+The area of concern is the Dominli Lagoon located between latitudes 5° 1´, 5^o^ 2´ N and longitudes 2° 44´, 2^o^ 47´ W at Bonyere in the Jomoro district in Ghana. This lagoon covers a total land area of 465,724.4m2. Diverse fish species, crabs, reptiles, molluscs and mangrove is found in this area.
+
+##2.2. Fish Data 
+![*S. melanotheron*](https://nas.er.usgs.gov/XIMAGESERVERX/2005/20051102151738.jpg "*S. melanotheron*")
+
+Data on fish specimens collected monthly from October to September 2012 from the Dominli lagoon was used for this analyses.  About 90 specimen of fish were bought from commercial fishermen every month and identified to the species level using fish identification manual by Dankwa et. al (1999) and Paugy et. al (2003 a, b). The specimens were put on ice and then transported to the laboratory for analysis. At the laboratory, the length of the species was measured to the nearest 0.1cm with a measuring board and the weight to the nearest 0.01g using an electronic weight balance. The sex of each fish was also determined.
+
+## 2.3 Data Analysis
+### 2.3a. Packages
+
+All analyses and plots were done in R-3.3 using the following packages psych, ggplot2, plyr. The data was analysed using both exploratory and regression techniques. Histogram was used to explore the distribution in the length of fish. Additionally Boxplot, which gives graphical representation of the summaries-minimum, lowerquatile, median, upperquatile  and maximum, was used to explore the distribution of gonad and body weight of the fish.The regression model was used to establish the relationship between body weight and length of fish. 
+
+### 2.3b. Length Weight Relationship
+
+The length-weight model (eqn 1) was linearized by log transformation to obtain eqn 2. To establish the relationship between length and weight, we modelled log transformed weight (log W) as the response and log transformed length (log Sl) as predictor using simple linear regrsession. 
+
+##### W = aSL^b^ ………. (Eqn 1)
+##### log W = loq(a) + blog(SL) ....(Eqn 2)
+
+Where, **W** = weight of fish specimen (in grammes), **SL** = standard length of fish (in cm), **a** = growth constant; and **b** = exponent of the equation. 
+
+
+### 2.3c. Gonad Weight of Female and Body weight
+
+The body weight of all the fish and gonad weight of females were graphically explored to understandand the spawning seasons using boxplot. The weigth of the gonads and body weigth were plotted on y-axis and months of catch was on the x-axis
+```{r}
+
+```
+
+```{r}
+
+```
+#**3. Results **
+### 3.1. Length Distribution of Tilapia
+The  distribution plots shows that males are approximately normally distributed and the distribution of ffemales is skewed to the right. The sizes of *Sarotherodon melanotheron* in the Dominli lagoon ranged from 7.9cm to 19.8cm from a total sample size of 1046 specimens. The modal class was between 10 -10.9cm. The mean standard length of males(11.9cm) was a few centimeters lower than that of females(12.5cm). Sizes of fish above lengths 16cm were mostly Females. Males were few in this size ranges.
+```{r}
+
+```
+
+```{r  echo=FALSE, include=TRUE}
+mu <- ddply(data, "Sex", summarise, grp.mean=mean(SL.cm))
+ggplot(data, aes(x=SL.cm))+
+  geom_histogram(color="black", fill="blue", binwidth = 0.5)+
+  facet_grid(Sex ~ .)+ #split plot to double panels
+  labs(x="Standard Length (cm)",y="Counts")+
+  geom_vline(data=mu, aes(xintercept=grp.mean, color="red"),
+             linetype="dashed")+#add mean lines
+labs(title="Fig1. Length Distribution",x="Standard Length(cm)", y = "Counts") # adding labels to plot
+```
+```{r}
+
+```
+
+```{r echo=FALSE, include=FALSE}
+head(mu)
+```
+### 3.2. Body Weight of fish
+The lowest median weight was observed in April for both sexes and heighest in June also for both sexes.
+```{r  echo=FALSE, include=TRUE}
+ggplot(data, aes(x=Month, y=BW.g)) + 
+  geom_boxplot(fill="green")+
+  facet_grid(Sex ~ .)+ #split plot to double panels
+  labs(title="Fig2. Plot of Body Weight by Month",x="Month", y = "Weight")+
+  theme_classic()
+```
+
+```{r}
+
+```
+
+### 3.3 Gonad Weight
+Median weight of Ovaries in Females was highest in the month of February. Weight of ovaries was least in the months of September, October, May and April.
+
+
+```{r}
+
+```
+
+```{r  echo=FALSE, include=TRUE}
+data_F = subset(data, subset=(Sex=='F')) # Subsetting only Females
+ggplot(data_F, aes(x=Month, y = GW.g )) + 
+ geom_boxplot(fill = 'green')+ # Plot of Gonad weight by Month
+  labs(title=" Fig3. Gonad Weight of Females",x="Month", y = "Weight")+
+  theme_classic()
+```
+
+### 3.4 Length Weight Relationship
+The regression anlysis indicated that there is a strong relationship between the log(W)  and log(SL). The correlation coefficent was (R =0.96) and shows that the log transformed weigth increases as the log transformed length. The slope was 2.6 shows that for a unit increase in log (SL) of S. melanotheron population in the lagoon.
+```{r echo=FALSE, include=TRUE}
+data$LS<- log(data$SL.cm)# Natural log length
+ data$LB<- log(data$BW.g)#Natural Log weight
+ggplot(data, aes(x=data$LS, y=data$LB, shape=Sex, color=Sex)) +
+geom_point()+
+  ggtitle(" Fig 4. Length Weigtht Relationship of Blackchin Tilapia")+
+  annotate("text", x = 2.2, y = 5.3, label = " r = 0.96 \nP < 0.005")+
+  labs(x="Log Length",y="Log Weight")+
+  geom_smooth(method=lm) # fitting a reqression line                
+```
+
+```{r echo=FALSE, include=FALSE}
+fit.e1 <-lm(data$LB ~ data$LS) # fit to line
+fit.e2 <- lm(data$LB ~ data$LS + data$Sex)
+summary(fit.e2)
+plot (fit.e1)
+```
+
+```{r}
+
+```
+
+#**4. Discussion **
+
+In data poor regions, Length and weight data are important in fisheries research because they provide basis for fisheries management and stock assessments. The size distribution of blackhin tilapia in the Dominli lagoon were longer than sizes of the same species in other lagoons and estuaries in Ghana like the Benya lagoon and Kakum estuary (Blay, 1998).The relationship between length and weight provides important information in assessing the biology of fish(Abowei and Hart, 2005). It also gives an indication of the conditions in the habitat of a Fish (Pauly, 1993). The growth constant, which is the b-value (hypothetically = 3) in the length weight equation gives an indication of the well being of the fish (Carlande, 1969 and King, 1996).  The b-value estimated for *S. melanotheron* population in this study is 2.7 and it is decribed by the equation BW=0.0814SL^2.7^(r=0.96).This shows the population has an allometric growth. Thus the rate of increase in length is higher than increase in body weight. Studies by Agboola and Anetekhia (2008) agrees with the results found in this analysis, however results from Blay (2008) somewhat differ from this study. Regression analysis shows a strong correlation between weight and length of the fish. Blackchin tilapia has an extended spawning season,which peaks in the month of February, indicative of the the heighest median weight observed for that month in the boxplots. The extended spawning season is attributed to low fishing pressure and favorable habit condition of the fish. Again, the month with heighest body weight of fish in the population corresponse to the raining season in the area. It is therefore assumed that the fish will have more food and space available to enchance growth, hence the increase in weight of fish observed for those months.
+
+
+```{r}
+
+```
+#**5. Conclusion**
+Size distribution of *S. melanotheron* in Dominli lagoon shows fish in good condition. There was a strong relationship between the length and weigth of the fish. The Relationship shows a negative allometric growth of the fish populations in the lagoon
+```{r}
+
+```
+#References
+
+Abban EK, Agyakwah S, Falk TM (2004). Socio-economic importance of Tilapiine fishes. In Abban EK, Casal CMV, Falk TM, Pullin RSV (Eds.), Biodiversity, Management and Utilization of West African Fishes World Fish Center Conference Proceedings. pp. 1-3. 
+
+Agboola, J. I & Anetekhai, M. A. 2008. Length-weight relationships of some fresh and brackish water fishes in Badagry creek, Nigeria. Journal of Applied Ichthyology, 24: 623-623.
+
+Ayoade, A.A., and A.O.O. Ikulala. 2007. Length weight relationship, condition factor and stomach contents of Hemichromis bimaculatus, Sarotherodonmelanotheron and 
+
+Chromidotilapia guentheri (Perciformes: Cichlidae) in Eleiyele Lake, southwestern Nigera. Revista de Biología Tropical 55(3-4):969-977.
+
+Blay, J. 1998. Growth and mortality parameters of Sarotherodon melanotheron melanotheron (Teleostei: Cichlidae) in two brackish water systems in Ghana. Ghana Journal of 
+Science, 38: 47-55. 
+
+Blay, J & Asabere-Ameyaw, A. 1993. Assessment of the fishery of a stunted population of the cichlid, Sarotherodon melanotheron (Rüppel), in a closed lagoon in Ghana. Journal of Applied Ichthyology, 9: 1-11.
+
+Carlander, K. D. 1969. Handbook of freshwater fishery biology. Iowa State University Press, Ames.
+ 
+Dankwa, H. R., Abban E. K & Teugels G. G. 1999. Fresh water fishes of Ghana: Identification, distribution, ecological and economic importance. Annales Sciences of Zoologiques,  283:53. 
+
+Eyeson KN (1979). Studies on egg production, spawning and fry development in Tilapia melanotheron. Ghana J. Sci. 17(1):25-34. 
+
+Eyeson KN (1983). Stunting and reproduction in pond-reared Sarotherodon melanotheron. 
+Aquaculture 31:257-267. 
+
+Eyeson KN (1992). Residual bi-parenting oral-brooding in the blackchin tilapia, Sarotherodon melanotheron (Rüppell), J. Fish Biol. 41:145- 146. 
+
+Faunce, C.H. and Lorenz, J.J. 2000. Reproductive biology of the introduced Mayan cichlid, Cichlasoma urophthalmus, within an estuarine mangrove habitat of southern Florida. Environmental Biology Fishes 58: 215-225. 
+
+Kone, T., and G.G. Teugels. 2003. Food habits of brackish water tilapia Sarotherodon melanotheron in riverine and lacustrine environments of a West African coastal basin. 
+Hydrobiologia 490:75-85.
+
+
+Ofori-Danson PK, Kumi GN (2006). Food and feeding habits of Sarotherodon melanotheron 
+
+Pauly, D. 1993. Fishbyte section editorial. Naga. ICLARM contribution. 16, 26.
+
+Rüppell, 1852, (Pisces: Cichlidae) in Sakumo lagoon, Ghana. West Afr. J. Appl. Ecol. 10:21-34.
+
+Paugy, D., Leveque C & Teugels G. G. 2003a. The fresh and brackish water fishes of West Africa, Volume I. Publications Scientifique du Muséum, MRAC, 459p. 
+
+
+
+```{r}
+
+```
+
+
+
